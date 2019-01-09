@@ -28,6 +28,11 @@
 			<version>${selenium-java}</version>
 		</dependency>
 		<dependency>
+			<groupId>io.appium</groupId>
+			<artifactId>java-client</artifactId>
+			<version>4.1.1</version>
+		</dependency>
+		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-server</artifactId>
 			<version>${selenium-server}</version>

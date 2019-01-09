@@ -11,6 +11,7 @@ import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import com.eaby.infy.loadproperties.LoadProperties;
+import com.ebay.infy.appiumutils.DesiredCapabilitiUtil;
 
 
 
@@ -37,6 +38,9 @@ public class BrowserFactory {
 			break;
 		case "IE":
 			driver = iEbrowser();
+			break;
+		case "ANDROIDCHROMEBROWSER":
+			driver = AndroidChromeBrowser();
 			break;
 		default:
 			driver = chromebrowser();
@@ -76,6 +80,15 @@ public class BrowserFactory {
 		driver.manage().timeouts().pageLoadTimeout(120, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		logger.info("Initiated Firefox driver and registered with event listener..");
+		return driver;
+	}
+	public static WebDriver AndroidChromeBrowser() {
+		try {
+			driver = DesiredCapabilitiUtil.getdriver();
+			return driver;
+		} catch (Exception e) {
+
+		}
 		return driver;
 	}
 
